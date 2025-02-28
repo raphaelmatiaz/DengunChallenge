@@ -3,14 +3,19 @@
 @tailwind utilities; */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-primary: #0f0f0f;
+  --color-secondary: #FFF;
+  --color-highlight-A: #e2e2e2;
+
+  --gradient-placeholder: linear-gradient(24deg, rgb(120, 120, 120) 0%, rgba(255,255,255,1) 100%);
 }
 
 *, *:before, *:after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  text-decoration: none;
+  color: var(--color-primary);
 }
 
 html {
@@ -21,4 +26,79 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-roboto), sans-serif;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: space-between;
+  height: 100vh;
+  min-height: 100vh;
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+main {
+  width: 100%;
+  height: fit-content;
+  padding: 160px 8vw;
+  /* background-color: rgba(255, 0, 0, 0.275); */
+}
+
+.cardWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  border: 1px solid var(--color-highlight-A);
+  padding: 8px;
+  background-color: rgba(0, 255, 255, 0.192);
+  height: fit-content;
+  padding: 64px;
+  border-top-right-radius: 100px;
+}
+
+h1 {
+  font-family: var(--font-rozha-one), serif;
+  font-size: 3.2rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 32px;
+}
+
+
+
+h1:before {
+  content: "\26AB";
+  font-size: 1rem;
+  display: inline-block;
+  line-height: 1; 
+  margin-right: 16px; 
+  vertical-align: middle;
+}
+
+.buttonPrevious {
+  background-color: none;
+  border: 1px solid var(--color-highlight-A);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  transform: translateY(-16px);
+}
+
+.buttonPrevious:before {
+  content: "\027A5";
+  rotate: 180deg;
+  font-size: 2rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+button:hover {
+  cursor: pointer;
 }

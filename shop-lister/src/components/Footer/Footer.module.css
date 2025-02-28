@@ -1,0 +1,9 @@
+
+
+.footer {
+    height: 8px;
+    width: 100%;
+    background-color: var(--color-primary);
+    position: fixed;
+    bottom: 0;
+}
