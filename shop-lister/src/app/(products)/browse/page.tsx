@@ -36,7 +36,6 @@ const BrowseByTag = () => {
     // UseState Variables
     const [data, setData] = useState<Product[]>([])
 
-
     // UseEffects
     useEffect(() => {
 
@@ -47,6 +46,8 @@ const BrowseByTag = () => {
     console.log(data) //debug
 
     const products: Product[] = data;
+
+    console.log("data: ", data)
 
     // Nota: Aqui estamos a filtrar cada produto recolhido na API e preencher um array 'tagList'
     // com uma lista das tags que vão aparecendo em cada product.tags, de forma a evitar repetições
@@ -104,7 +105,7 @@ const BrowseByTag = () => {
                 <h2>Browse by Category</h2>
                 <div className={styles.cardWrapper}>
                     {productTags.map((item, index) => (
-                        <Link key={index} href="/list">
+                        <Link key={index} href={`/list/${(item.tag)}`}> 
                             <CardTag tag={item.tag} image={item.image} />
                         </Link>
                     ))}
@@ -116,3 +117,5 @@ const BrowseByTag = () => {
 }
 
 export default BrowseByTag
+
+//{`/list/${encodeURIComponent(item.tag)}`}
