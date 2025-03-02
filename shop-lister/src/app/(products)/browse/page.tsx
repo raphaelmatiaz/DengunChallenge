@@ -117,5 +117,3 @@ const BrowseByTag = () => {
 }
 
 export default BrowseByTag
-
-//{`/list/${encodeURIComponent(item.tag)}`}

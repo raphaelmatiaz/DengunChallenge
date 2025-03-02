@@ -5,23 +5,11 @@ import Link from 'next/link';
 import styles from './browse.module.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useParams } from "next/navigation"
 
-const ListProductsOfTag = ({ params }: { params: { tag: string } }) => {
-    const tag = params.tag; 
+const ListProductsOfTag = () => {
 
-    console.log(tag);
-
-    const [data, setData] = useState(null); 
-
-    useEffect(() => {
-        axios.get("/api/getData")
-            .then(response => {
-                setData(response.data); 
-            })
-            .catch(error => console.error("Error fetching data:", error));
-
-        console.log(data); 
-    }, []);
+    const { tag } = useParams(); // Vai buscar o nome da tag passada pelo 'Link' element da outra route
 
     return (
         <main>
