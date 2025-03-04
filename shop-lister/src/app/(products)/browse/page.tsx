@@ -5,6 +5,8 @@ import axios from "axios"
 import CardTag from "@/components/CardTag/CardTag"
 import Link from "next/link"
 import styles from './browse.module.css'
+import { useDispatch } from "react-redux";
+// import { setProductTags } from "@/redux/tagSlice";
 
 
 // Interfaces
@@ -35,6 +37,10 @@ const BrowseByTag = () => {
 
     // UseState Variables
     const [data, setData] = useState<Product[]>([])
+
+    // Redux
+    // const dispatch = useDispatch(); // Redux Dispatch
+
 
     // UseEffects
     useEffect(() => {
@@ -99,10 +105,17 @@ const BrowseByTag = () => {
 
     console.log(productTags); //debug
 
+    // Dispatch the processed product tags to Redux store
+    // useEffect(() => {
+    //     if (productTags.length > 0) {
+    //         dispatch(setProductTags(productTags));
+    //     }
+    // }, [productTags, dispatch]);
+
     return (
         <div>
             <main>
-                <h2>Browse by Category</h2>
+                <h2>Browse Products by Tag</h2>
                 <div className={styles.cardWrapper}>
                     {productTags.map((item, index) => (
                         <Link key={index} href={`/list/${(item.tag)}`}> 

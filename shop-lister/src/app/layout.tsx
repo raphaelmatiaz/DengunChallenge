@@ -33,6 +33,8 @@
 //   );
 // }
 
+import { Provider } from "react-redux";
+// import { store } from "@/redux/store";
 import type { Metadata } from "next";
 import { Roboto, Rozha_One } from "next/font/google";
 import "./globals.css";
@@ -65,9 +67,11 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} ${rozhaOne.variable} antialiased`}
       >
-        <Navbar></Navbar>
-          {children}
-        <Footer></Footer>
+        {/* <Provider store={store}> */}
+          <Navbar></Navbar>
+            {children}
+          <Footer></Footer>
+        {/* </Provider> */}
       </body>
     </html>
   );

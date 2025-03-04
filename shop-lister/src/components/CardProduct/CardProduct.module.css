@@ -1,39 +1,53 @@
 
 .cardWrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
-    width: fit-content;
+    justify-content: space-between;
     min-width: 304px;
-    max-width: 304px;
+    /* max-width: 304px; */
+    width: 100%;
     height: 304px;
     min-height: 304px;
     border: 1px solid var(--color-highlight-A);
     padding: 8px;
     transition: box-shadow 0.2s ease-out;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
-
+/* 
 .cardWrapper:hover {
     box-shadow: 0 0 10px rgba(113, 113, 113, 0.508);
-}
+} */
 
 .tagImage {
-    width: 100%;
+    width: 304px;
     height: 100%;
     background: var(--gradient-placeholder);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     /* background: linear-gradient(to bottom left, black, white); */
 }
 
-.cardNameWrapper {
-    padding: 8px;
-    max-width: 304px;
-    overflow-wrap: break-word;
+.productInfoWrapper {
+    padding: 4px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
 }
 
-.tagName {
-    font-size: 1.4rem;
-    font-weight: 100;
+.productName {
+    font-size: 2.8rem;
+    font-weight: lighter;
+    margin-bottom: 8px;
+}
+
+.productPrice {
+    font-size: 2.4rem;
+    font-weight: 700;
 }
 
 .tagName:before {
@@ -43,4 +57,69 @@
     line-height: 1; 
     margin-right: 8px; 
     vertical-align: middle;
+}
+
+.stockVendorInfo {
+    max-width: 180px;
+    word-wrap: break-word;
+    height: fit-content;
+}
+
+/* .titlePriceWrapper {
+
+} */
+
+.headerInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.tagsWrapper {
+    font-size: 1.6rem;
+}
+
+.variantsWrapper {
+    font-size: 1.6rem;
+    width: 100%;
+}
+
+.variantList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    height: fit-content;
+    max-width: 80%;
+}
+
+.variant:before {
+    content: "\026AC";
+    margin-right: 8px;
+}
+
+.heading3 {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.inStock {
+    font-size: 2.8rem;
+    color: #50b412;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.stockAmount {
+    font-size: 2rem;
+}
+
+.vendor {
+    font-size: 2rem;
+}
+
+.emphasise {
+    font-style: normal;
+    font-weight: bold;
 }
