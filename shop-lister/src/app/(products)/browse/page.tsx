@@ -6,8 +6,6 @@ import CardTag from "@/components/CardTag/CardTag"
 import Link from "next/link"
 import styles from './browse.module.css'
 import { useDispatch } from "react-redux";
-// import { setProductTags } from "@/redux/tagSlice";
-
 
 // Interfaces
 interface Variant {
@@ -31,29 +29,22 @@ interface Tag {
 }
 
 
-
-// Function Based Component
 const BrowseByTag = () => {
 
-    // UseState Variables
+
     const [data, setData] = useState<Product[]>([])
 
-    // Redux
-    // const dispatch = useDispatch(); // Redux Dispatch
-
-
-    // UseEffects
     useEffect(() => {
 
         axios.get("/api/getData")
             .then(response => setData(response.data.products))
     }, [])
 
-    console.log(data) //debug
+    // console.log(data) //debug
 
     const products: Product[] = data;
 
-    console.log("data: ", data)
+    // console.log("data: ", data) //debug
 
     // Nota: Aqui estamos a filtrar cada produto recolhido na API e preencher um array 'tagList'
     // com uma lista das tags que vão aparecendo em cada product.tags, de forma a evitar repetições
@@ -70,7 +61,7 @@ const BrowseByTag = () => {
             });
         });
 
-    console.log("tagList", tagList) //debug
+    // console.log("tagList", tagList) //debug
 
     // Nota: Aqui vamos iterar sobre uma cópia do array 'tagList' e selecionar de entre o array 'products'
     // a imagem que corresponde ao primeiro producto com cada tag da 'tagList', de forma a obter uma image de 
@@ -92,7 +83,7 @@ const BrowseByTag = () => {
         }
     }
     
-    console.log(imgSrcListOfEachTag); //debug
+    // console.log(imgSrcListOfEachTag); //debug
 
     // Nota: Aqui estamos a criar um novo array de objectos, cujo as propriedades são as uma tag e uma imagem do primeiro produto com essa tag
     // É tipo uma mistura dos dois ultimos arrays criados 'tagList' e 'imgSrcListOfEachTag'. Estamos a pegar no index de cada um desses arrays
@@ -103,14 +94,7 @@ const BrowseByTag = () => {
         image: imgSrcListOfEachTag[index] || "" 
     }));
 
-    console.log(productTags); //debug
-
-    // Dispatch the processed product tags to Redux store
-    // useEffect(() => {
-    //     if (productTags.length > 0) {
-    //         dispatch(setProductTags(productTags));
-    //     }
-    // }, [productTags, dispatch]);
+    // console.log(productTags); //debug
 
     return (
         <div>

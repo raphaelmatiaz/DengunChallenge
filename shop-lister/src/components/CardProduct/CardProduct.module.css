@@ -5,19 +5,13 @@
     align-items: flex-start;
     justify-content: space-between;
     min-width: 304px;
-    /* max-width: 304px; */
     width: 100%;
     height: 304px;
     min-height: 304px;
     border: 1px solid var(--color-highlight-A);
     padding: 8px;
     transition: box-shadow 0.2s ease-out;
-    /* cursor: pointer; */
 }
-/* 
-.cardWrapper:hover {
-    box-shadow: 0 0 10px rgba(113, 113, 113, 0.508);
-} */
 
 .tagImage {
     width: 304px;
@@ -26,7 +20,6 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    /* background: linear-gradient(to bottom left, black, white); */
 }
 
 .productInfoWrapper {
@@ -65,10 +58,6 @@
     height: fit-content;
     margin-left: 16px;
 }
-
-/* .titlePriceWrapper {
-
-} */
 
 .headerInfo {
     display: flex;
@@ -130,42 +119,36 @@
 }
 
 
-/* Phones (portrait and small devices) */
 @media screen and (max-width: 1020px) {
 
-.cardWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    min-width: 304px;
-    /* max-width: 304px; */
-    width: 100%;
-    height: fit-content;
-    min-height: 304px;
-    border: 1px solid var(--color-highlight-A);
-    padding: 8px;
-    transition: box-shadow 0.2s ease-out;
-    /* cursor: pointer; */
+    .cardWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        min-width: 304px;
+        width: 100%;
+        height: fit-content;
+        min-height: 304px;
+        border: 1px solid var(--color-highlight-A);
+        padding: 8px;
+        transition: box-shadow 0.2s ease-out;
+    }
+
+    .tagImage {
+        width: 100%;
+        height: 304px;
+        background: var(--gradient-placeholder);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-bottom: 8px;
+    }
+
 }
-
-.tagImage {
-    width: 100%;
-    height: 304px;
-    background: var(--gradient-placeholder);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-bottom: 8px;
-    /* background: linear-gradient(to bottom left, black, white); */
-}
-
-
-
-  }
   
-  /* Tablets and small screens */
-  @media screen and (max-width: 710px) {
+@media screen and (max-width: 710px) {
+    
     .headerInfo {
         display: flex;
         flex-direction: column;
@@ -179,4 +162,4 @@
         height: fit-content;
         margin: 16px 0
     }
-  }
+}

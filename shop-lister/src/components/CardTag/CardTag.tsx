@@ -2,9 +2,6 @@ import styles from './CardTag.module.css'
 
 
 interface CardTag {
-    // id?: number,
-    // title: string,
-    // image: string,
     tag: string,
     image: string,
 }

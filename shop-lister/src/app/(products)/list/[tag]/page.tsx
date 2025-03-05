@@ -47,21 +47,19 @@ interface Tag {
 
 const ListProductsOfTag = () => {
 
-     // UseState Variables
     const [data, setData] = useState<Product[]>([])
 
-    // UseEffects
     useEffect(() => {
 
         axios.get("/api/getData")
             .then(response => setData(response.data.products))
     }, [])
 
-    console.log(data) //debug
+    // console.log(data) //debug
 
     const products: Product[] = data;
 
-    console.log("data: ", data)
+    // console.log("data: ", data) //debug
 
     const { tag } = useParams(); // Vai buscar o nome da tag passada pelo 'Link' element da outra route
 
@@ -89,7 +87,4 @@ const ListProductsOfTag = () => {
 };
 
 export default ListProductsOfTag;
-function setData(products: any): any {
-    throw new Error('Function not implemented.');
-}
 

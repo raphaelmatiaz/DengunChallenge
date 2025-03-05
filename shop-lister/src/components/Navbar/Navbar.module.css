@@ -9,24 +9,19 @@
     white-space: nowrap;
 }
 
-/* Phones (portrait and small devices) */
 @media screen and (max-width: 600px) {
-    .navbar {
-        border-bottom: 1px solid var(--color-primary);
-        padding: 32px 104px;
-        position: fixed;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100vw;
-        background-color: var(--color-secondary);
-        z-index: 100;
-        white-space: nowrap;
-    }
+
+  .navbar {
+      border-bottom: 1px solid var(--color-primary);
+      padding: 32px 104px;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      background-color: var(--color-secondary);
+      z-index: 100;
+      white-space: nowrap;
   }
-  
-  /* Tablets and small screens */
-  @media screen and (max-width: 768px) {
-    /* Tablet styles here */
-  }
+}

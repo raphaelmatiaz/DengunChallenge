@@ -35,34 +35,6 @@ const CardProduct = (props: CardProduct) => {
     const [lowestVariantPrice, setLowestVariantPrice] = useState(0)
     const [highestVariantPrice, setHighestVariantPrice] = useState(0)
 
-    
-
-
-
-    // useEffect(() => {
-
-    //     let lowestPrice: number = 0
-    //     let highestPrice: number = 0
-
-    //     // Calcular a quantidade total de stock de um produto (across all variants)
-    //     for (const variant of props.variants) {
-           
-    //             let calculatedStockAmount = totalStockAmount + variant.inventory_quantity
-    //             setTotalStockAmount(calculatedStockAmount)
-    //             console.log(variant.title, totalStockAmount)
-
-    //             // Calcular o preço mais baixo e mais alto de um produto (across all variants)
-    //             const variantPrice = parseFloat(variant.price);
-    //             if (variantPrice > lowestPrice && variantPrice < highestPrice) {
-    //                 lowestPrice = variantPrice
-
-
-    //                 //add logic here, modify as needed
-    //             }
-    //     }
-        
-    // }, [])
-
     useEffect(() => {
         if (props.variants.length === 0) return;
     
