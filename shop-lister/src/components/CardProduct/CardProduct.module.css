@@ -63,6 +63,7 @@
     max-width: 180px;
     word-wrap: break-word;
     height: fit-content;
+    margin-left: 16px;
 }
 
 /* .titlePriceWrapper {
@@ -78,6 +79,7 @@
 
 .tagsWrapper {
     font-size: 1.6rem;
+    margin-bottom: 16px;
 }
 
 .variantsWrapper {
@@ -89,14 +91,17 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 16px;
     height: fit-content;
     max-width: 80%;
 }
 
+.variant {
+    margin: 0 16px 0 0;
+}
+
 .variant:before {
     content: "\026AC";
-    margin-right: 8px;
+    margin-right: 4px;
 }
 
 .heading3 {
@@ -123,3 +128,55 @@
     font-style: normal;
     font-weight: bold;
 }
+
+
+/* Phones (portrait and small devices) */
+@media screen and (max-width: 1020px) {
+
+.cardWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    min-width: 304px;
+    /* max-width: 304px; */
+    width: 100%;
+    height: fit-content;
+    min-height: 304px;
+    border: 1px solid var(--color-highlight-A);
+    padding: 8px;
+    transition: box-shadow 0.2s ease-out;
+    /* cursor: pointer; */
+}
+
+.tagImage {
+    width: 100%;
+    height: 304px;
+    background: var(--gradient-placeholder);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 8px;
+    /* background: linear-gradient(to bottom left, black, white); */
+}
+
+
+
+  }
+  
+  /* Tablets and small screens */
+  @media screen and (max-width: 710px) {
+    .headerInfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .stockVendorInfo {
+        max-width: 100%;
+        word-wrap: break-word;
+        height: fit-content;
+        margin: 16px 0
+    }
+  }
